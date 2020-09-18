@@ -1,17 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import './tailwind.output.css';
+import TodoListItem from './components/TodoListItem';
+
+const todos: Todo[] = [
+  {
+    text: 'learn TypeScript 👨‍💻',
+    complete: false,
+  },
+  {
+    text: 'go for a run 🏃‍♂️',
+    complete: true,
+  },
+];
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <main>
+      <div className="max-w-md mx-auto flex justify-center p-6 bg-gray-100 mt-10 rounded-lg shadow-xl">
+        <div className="ml-6 pt-1">
+          <h1 className="font-sans text-4xl font-black text-black text-center">
+            Get Shit Done
+        </h1>
+          <ul>
+            {todos.map(todo => <TodoListItem todo={todo} />)}
+          </ul>
+        </div>
+      </div>
+    </main>
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
