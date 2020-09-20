@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TodoForm from './components/AddTodoForm';
 import TodoList from './components/TodoList';
 
@@ -28,6 +28,17 @@ function App() {
     });
     setTodos(newTodos);
   };
+
+  useEffect(() => {
+    const data = window.localStorage.getItem("todos");
+    if (data) {
+      setTodos(JSON.parse(data));
+    }
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("todos", JSON.stringify(todos));
+  });
 
   const addTodo: AddTodo = (text: string) => {
     const newTodo = { text, complete: false };
