@@ -29,6 +29,11 @@ function App() {
     setTodos(newTodos);
   };
 
+  const removeTodo = (selectedTodo: Todo) => {
+    const newTodos = todos.filter(todo => todo !== selectedTodo);
+    setTodos(newTodos);
+  }
+
   useEffect(() => {
     const data = window.localStorage.getItem("todos");
     if (data) {
@@ -52,7 +57,7 @@ function App() {
           <h1 className="font-sans text-4xl font-black text-black text-center mb-8">
             Get Shit Done
         </h1>
-          <TodoList todos={todos} toggleTodo={toggleTodo} />
+          <TodoList removeTodo={removeTodo} todos={todos} toggleTodo={toggleTodo} />
           <TodoForm addTodo={addTodo} />
         </div>
       </div>
