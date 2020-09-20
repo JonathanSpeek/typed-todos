@@ -606,18 +606,6 @@ video {
   }
 }
 
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -843,6 +831,10 @@ video {
   color: rgba(45, 55, 72, var(--text-opacity));
 }
 
+.w-8 {
+  width: 2rem;
+}
+
 .w-full {
   width: 100%;
 }
@@ -930,16 +922,8 @@ video {
     }
   }
 
-  @media (min-width: 1024px) {
-    .sm\:container {
-      max-width: 1024px;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .sm\:container {
-      max-width: 1280px;
-    }
+  .sm\:opacity-100 {
+    opacity: 1;
   }
 }
 
@@ -960,79 +944,15 @@ video {
     }
   }
 
-  @media (min-width: 1024px) {
-    .md\:container {
-      max-width: 1024px;
-    }
+  .md\:opacity-0 {
+    opacity: 0;
   }
 
-  @media (min-width: 1280px) {
-    .md\:container {
-      max-width: 1280px;
-    }
+  .md\:hover\:opacity-100:hover {
+    opacity: 1;
   }
 
   .md\:w-2\/3 {
     width: 66.666667%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .lg\:container {
-    width: 100%;
-  }
-
-  @media (min-width: 640px) {
-    .lg\:container {
-      max-width: 640px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .lg\:container {
-      max-width: 768px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .lg\:container {
-      max-width: 1024px;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .lg\:container {
-      max-width: 1280px;
-    }
-  }
-}
-
-@media (min-width: 1280px) {
-  .xl\:container {
-    width: 100%;
-  }
-
-  @media (min-width: 640px) {
-    .xl\:container {
-      max-width: 640px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .xl\:container {
-      max-width: 768px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .xl\:container {
-      max-width: 1024px;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .xl\:container {
-      max-width: 1280px;
-    }
   }
 }

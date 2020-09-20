@@ -20,7 +20,7 @@ const TodoListItem: React.FC<Props> = ({ removeTodo, todo, toggleTodo }) => {
           {todo.text}
         </span>
       </label>
-      <button className="cursor-pointer ml-4" onClick={() => removeTodo(todo)}><span role="img" aria-label="remove todo">🗑️</span></button>
+      <button className="cursor-pointer ml-4 md:opacity-0 md:hover:opacity-100 w-8 sm:opacity-100" onClick={() => removeTodo(todo)}><span role="img" aria-label="remove todo">🗑️</span></button>
     </li>
   );
 };
