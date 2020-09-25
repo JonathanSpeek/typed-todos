@@ -65,7 +65,7 @@ function App() {
     <main className="App">
       <div className="max-w-md mx-auto flex justify-center p-6 bg-gray-100 mt-10 rounded-lg shadow-xl">
         <div className="ml-6 pt-1">
-          <h1 className="font-sans text-4xl font-black text-black text-center mb-8">
+          <h1 className="font-sans text-4xl font-black text-black text-center mb-6">
             Get Shit Done
         </h1>
           <TodoList removeTodo={removeTodo} todos={todos} toggleTodo={toggleTodo} />

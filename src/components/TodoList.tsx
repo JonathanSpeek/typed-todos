@@ -18,12 +18,25 @@ const groupBy = <T, K extends keyof any>(list: T[], getKey: (item: T) => K) =>
 const TodoList: React.FC<Props> = ({ removeTodo, todos, toggleTodo }) => {
   const todosByDate = groupBy(todos, i => i.createdAt);
 
-  console.log(todosByDate)
+  const items = [];
+
+  for (const [key, values] of Object.entries(todosByDate)) {
+    const li = (
+      <li key={key} className="text-lg font-bold pt-8">
+        {key}
+        <ul>
+          {values.map(todo => (
+            <TodoListItem key={`${todo.text}${Math.random() + 1}`} removeTodo={removeTodo} todo={todo} toggleTodo={toggleTodo} />
+          ))}
+        </ul>
+      </li>
+    );
+    items.push(li);
+  }
+
   return (
     <ul>
-      {todos.map(todo => (
-        <TodoListItem key={`${todo.text}${Math.random() + 1}`} removeTodo={removeTodo} todo={todo} toggleTodo={toggleTodo} />
-      ))}
+      {items}
     </ul>
   );
 };
