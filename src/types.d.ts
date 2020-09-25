@@ -1,6 +1,7 @@
 interface Todo {
   text: string;
   complete: boolean;
+  createdAt: string;
 }
 
 type ToggleTodo = (selectedTodo: Todo) => void;

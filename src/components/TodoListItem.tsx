@@ -9,7 +9,7 @@ interface Props {
 const TodoListItem: React.FC<Props> = ({ removeTodo, todo, toggleTodo }) => {
   return (
     <li>
-      <label className="md:w-2/3 block text-gray-500 font-bold contents">
+      <label className="md:w-2/3 text-gray-500 font-bold contents">
         <input
           className="mr-2 leading-10"
           type="checkbox"

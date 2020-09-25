@@ -2,14 +2,25 @@ import React, { useEffect, useState } from 'react';
 import TodoForm from './components/AddTodoForm';
 import TodoList from './components/TodoList';
 
+const TODAY = new Date();
+
+function formatDate(date: Date): string {
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const year = date.getFullYear();
+  return `${month}.${day}.${year}`
+}
+
 const initialTodos: Todo[] = [
   {
     text: 'learn TypeScript 👨‍💻',
     complete: false,
+    createdAt: formatDate(TODAY)
   },
   {
     text: 'go for a run 🏃‍♂️',
     complete: true,
+    createdAt: formatDate(TODAY)
   },
 ];
 
@@ -46,7 +57,7 @@ function App() {
   });
 
   const addTodo: AddTodo = (text: string) => {
-    const newTodo = { text, complete: false };
+    const newTodo = { text, complete: false, createdAt: formatDate(TODAY) };
     setTodos([...todos, newTodo]);
   };
 
