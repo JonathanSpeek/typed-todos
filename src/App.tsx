@@ -8,7 +8,7 @@ function formatDate(date: Date): string {
   const month = date.getMonth() + 1;
   const day = date.getDate();
   const year = date.getFullYear();
-  return `${month}.${day}.${year}`
+  return `${year}.${month}.${day}`
 }
 
 const initialTodos: Todo[] = [
@@ -58,7 +58,7 @@ function App() {
 
   const addTodo: AddTodo = (text: string) => {
     const newTodo = { text, complete: false, createdAt: formatDate(TODAY) };
-    setTodos([...todos, newTodo]);
+    setTodos([newTodo, ...todos]);
   };
 
   return (
